@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Just title</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Just title</title>
+    <style type="text/css">
+    h1{
+        text-align: center;
+    }
+    span{
+        color: red;
+    }
+    </style>
 
-    <body>
-        <h1>Just for Index. lixun branch </h1>
-    </body>
+    <script type="text/javascript">
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    </script>
+</head>
+
+<body>
+<h1>感谢您的支持，现在 <span id="platform"></span> 平台的APP还在开发测试中，未开放下载，敬请期待 </h1>
+<script type="text/javascript">
+    if(getUrlParam("platform") == "android")
+    {
+        document.getElementById("platform").innerHTML = "Android";
+    }
+    else if(getUrlParam("platform") == "ios")
+    {
+        document.getElementById("platform").innerHTML = "iOS";
+    }
+</script>
+</body>
 </html>
